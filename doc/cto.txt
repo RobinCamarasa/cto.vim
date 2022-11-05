@@ -1,0 +1,198 @@
+*cto.txt* functionality for Contextual |text-objects| with support 
+for different languages.
+
+Author:  Robin Camarasa <http://robincamarasa.github.io>
+
+                          ____ _____ ___  ~
+                         / ___|_   _/ _ \ ~
+                        | |     | || | | |~
+                        | |___  | || |_| |~
+                         \____| |_| \___/ ~
+                  
+
+The main idea of this plugin is to extend vim |text-objects| functionnality 
+to adapt to different programming languages (see |text-objects|)
+
+Are currently supported: |python-text-objects|, |tex-text-objects|, 
+|vim-text-objects|
+
+===============================================================================
+CONTENTS                                              *contextual-text-objects*
+        
+        0. License .................................. |cto-license|
+        1. General Text Objects...................... |general-text-objects|
+        2. Python Text Objects....................... |python-text-objects|
+        3. Tex Text Objects.......................... |tex-text-objects|
+        4. Vim Text Objects.......................... |vim-text-objects|
+
+===============================================================================
+Section 0: License                                    *cto-license*
+
+
+Copyright 2022 Robin Camarasa
+
+Permission is hereby granted, free of charge, to any person obtaining a copy 
+of this software and associated documentation files (the "Software"), to deal 
+in the Software without restriction, including without limitation the rights 
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
+copies of the Software, and to permit persons to whom the Software is 
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in 
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF 
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN 
+NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY 
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT
+OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE 
+USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+===============================================================================
+Section 1: General Text Objects                       *general-text-objects*
+
+This plugin add the following text objects.
+
+                                                      *general_v_il* 
+                                                      *general_il*
+il                      "inner line", select the content of the current line.
+
+===============================================================================
+Section 2: Python Text Objects                        *python-text-objects*
+
+This plugin add the following text objects for python.
+
+                                                      *python_v_fn* 
+                                                      *python_fn*
+fn                      "function name", select the name of the current.
+                        class.
+
+                                                      *python_v_fa*
+                                                      *python_fa*
+fa                      "function argument", select the arguments of
+                        the current function.
+
+                                                      *python_v_if*
+                                                      *python_if*
+if                      "inner function", select inside function.
+                        Starts after the character ":" and ends at the last
+                        non blank character of the function
+
+                                                      *python_v_af*
+                                                      *python_af*
+af                      "around function", select around function.
+                        Starts at "def" and ends after the last
+                        non blank character of the function
+
+                                                      *python_v_cn*
+                                                      *python_cn*
+cn                      "class name", select the name of the current.
+                        class.
+
+                                                      *python_v_ic*
+                                                      *python_ic*
+ic                      "inner class", select inside class.
+                        Starts after the character ":" and ends at the last
+                        non blank character of the class
+
+                                                      *python_v_ac*
+                                                      *python_ac*
+ac                      "around class", select around class.
+                        Starts at "class" and ends after the last
+                        non blank character of the class
+
+                                                      *python_v_ii*
+                                                      *python_ii*
+ii                      "inner indent", select inside class.
+                        Starts after the character ":" and ends at the last
+                        non blank character of the class
+
+                                                      *python_v_ai*
+                                                      *python_ai*
+ai                      "around indent", select around class.
+                        Starts at the begining of the line before
+                        the indented block and ends after the last
+                        non blank character of the indented block
+
+===============================================================================
+Section 3: Tex Text Objects                           *tex-text-objects*
+
+This plugin add the following text objects for python.
+
+                                                      *tex_v_i$*
+                                                      *tex_i$*
+i$                      "inner $ environment", select inside the $ 
+                        environment.
+
+                                                      *tex_v_a$*
+                                                      *tex_a$*
+a$                      "around $ environment", select around the $ 
+                        environment.
+
+                                                      *tex_v_ic*
+                                                      *tex_ic*
+ic                      "inner command", select inside command name
+
+                                                      *tex_v_ac*
+                                                      *tex_ac*
+ac                      "around command", select around command.
+                        Starts after "\" and ends at the closing bracket
+
+                                                      *tex_v_ie* 
+                                                      *tex_ie*
+ie                      "inner environment", select inside environment.
+                        Starts after "\begin{###}" and ends before
+                        "\end{###}"
+
+                                                      *tex_v_ae* 
+                                                      *tex_ae*
+ae                      "around environment", select around environment.
+                        Starts at "\begin{###}" and ends at "\end{###}"
+
+                                                      *tex_v_id*
+                                                      *tex_id*
+id                      "inner document", select inside document.
+                        Starts after "\begin{document}" and ends before
+                        "\end{document}"
+
+                                                      *tex_v_ad*
+                                                      *tex_ad*
+ad                      "around document", select around document.
+                        Starts at "\begin{document}" and ends at "\end{document}"
+
+                                                      *tex_v_idm*
+                                                      *tex_idm*
+im                      "inner math", select inner math.
+                        Starts after "\[" and ends before "\]"
+
+                                                      *v_adm* *adm*
+am                      "around math", select around math.
+                        Starts at "\[" and ends at "\]"
+
+===============================================================================
+Section 4: Vim Text Objects                           *vim-text-objects*
+
+This plugin add the following text objects for vimscript.
+
+                                                      *vim_v_fn*
+                                                      *vim_fn*
+fn                      "function name", select the name of the current.
+                        class.
+
+                                                      *vim_v_fa*
+                                                      *vim_fa*
+fa                      "function argument", select the arguments of
+                        the current function.
+
+                                                      *tex_v_if*
+                                                      *tex_if*
+if                      "inner function", select inside function.
+                        Starts after the character ":" and ends at the last
+                        non blank character of the function
+
+                                                      *vim_v_af*
+                                                      *vim_af*
+af                      "around function", select around function.
+                        Starts at "def" and ends after the last
+                        non blank character of the function
